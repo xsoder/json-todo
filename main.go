@@ -11,6 +11,21 @@ type task struct {
 	tasks string
 }
 
+func addTask() {
+
+}
+
+func deleteTask() {
+
+}
+
+func markTask() {
+
+}
+
+//func displayTask() {
+
+
 func checkFile() (bool, error) {
 	tasks := task{date: "17/6/2025", tasks: "First test"}
 	json_file, err := json.Marshal(tasks.tasks)
@@ -24,6 +39,11 @@ func checkFile() (bool, error) {
 	return true, nil
 }
 
+
+
+//func initTask() {
+
+
 // func markTask() {
 //
 // }
@@ -36,6 +56,7 @@ func testFile(t *testing.T) {
 		t.Errorf(`Hello("") = %t, %v, want "", error`, state, err)
 	}
 }
+
 func main() {
 	checkFile()
 	msg := "Hello world"

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"testing"
+    "os"
 )
 
 type task struct {
@@ -32,10 +33,6 @@ func checkFile() (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	_ = json_file
-	fmt.Printf("json_file: %s", json_file)
-	fmt.Println(tasks.date)
-	fmt.Println(tasks.tasks)
 	return true, nil
 }
 
@@ -45,10 +42,10 @@ func checkFile() (bool, error) {
 
 
 // func markTask() {
-//
+
 // }
 // func displayTask() {
-//
+
 // }
 func testFile(t *testing.T) {
 	state, err := checkFile()
@@ -58,9 +55,23 @@ func testFile(t *testing.T) {
 }
 
 func main() {
-	checkFile()
-	msg := "Hello world"
-	log := 12
-	fmt.Printf("%s", msg)
-	fmt.Printf("%d", log)
+    if len (os.Args) < 2 {
+        checkFile()
+    }
+    else {
+        switch os.Args[1] {
+            case "add":
+                addTask()
+
+            case "delete":
+                deleteTask()
+
+            case "mark":
+                markTask()
+
+            case "display":
+                displayTask()
+
+        }
+    }
 }

@@ -57,8 +57,7 @@ func testFile(t *testing.T) {
 func main() {
     if len (os.Args) < 2 {
         checkFile()
-    }
-    else {
+    } else {
         switch os.Args[1] {
             case "add":
                 addTask()
@@ -71,6 +70,9 @@ func main() {
 
             case "display":
                 displayTask()
+
+            case "init":
+                initTask()
 
         }
     }
